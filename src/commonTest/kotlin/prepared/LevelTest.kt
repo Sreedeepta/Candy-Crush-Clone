@@ -1,3 +1,5 @@
+package prepared
+
 import j4k.candycrush.model.Level
 import j4k.candycrush.model.Tile
 import kotlin.test.Test

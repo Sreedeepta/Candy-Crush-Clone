@@ -1,3 +1,5 @@
+package prepared
+
 import com.soywiz.korma.geom.Point
 import j4k.candycrush.math.PositionGrid
 import j4k.candycrush.math.PositionGrid.Position
@@ -22,6 +24,7 @@ class PositionGridTest {
         assertEquals(Point(0, 60), positionGrid.getPosition(0, 3))
     }
 
+
     @Test
     fun testGetPositionOnShiftedGrid() {
         val positionGrid = PositionGrid(100, 100, 3, 3, 20)
@@ -39,6 +42,7 @@ class PositionGridTest {
         assertEquals(Position(0, 1), positionGrid.getField(100, 120))
         assertEquals(Position(0, 1), positionGrid.getField(100, 130))
     }
+
 
     @Test
     fun testIsOnGrid() {

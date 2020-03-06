@@ -17,7 +17,9 @@ class Row(rowSize: Int) : Iterable<Tile> {
 
     private var tiles = Array(rowSize) { Tile.Hole }
 
-    operator fun get(row: Int): Tile {
+    operator fun get(row: Int): Tile = getTile(row)
+
+    private fun getTile(row: Int): Tile {
         return if (isInRow(row)) {
             tiles[row]
         } else {

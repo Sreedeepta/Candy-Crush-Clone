@@ -1,8 +1,13 @@
+package step1
+
 import j4k.candycrush.model.Tile
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
-class TileTest {
+class TileTestS1 {
+
 
     @Test
     fun testConvertCharToTile() {
@@ -16,6 +21,7 @@ class TileTest {
         assertEquals(Tile.Wall, Tile.getTile("W"))
     }
 
+
     @Test
     fun testGetShortName() {
         assertEquals("A", Tile.A.shortName())
@@ -27,4 +33,18 @@ class TileTest {
         assertEquals("O", Tile.OutOfSpace.shortName())
         assertEquals("W", Tile.Wall.shortName())
     }
+
+
+    @Test
+    fun testIsTile() {
+        assertTrue(Tile.A.isTile())
+        assertTrue(Tile.B.isTile())
+        assertTrue(Tile.C.isTile())
+        assertTrue(Tile.D.isTile())
+        assertTrue(Tile.E.isTile())
+        assertFalse(Tile.Hole.isTile())
+        assertFalse(Tile.OutOfSpace.isTile())
+        assertFalse(Tile.Wall.isTile())
+    }
+
 }
