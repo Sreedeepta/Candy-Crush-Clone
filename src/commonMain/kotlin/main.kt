@@ -7,7 +7,7 @@ import com.soywiz.korim.color.Colors
 import j4k.candycrush.*
 import j4k.candycrush.audio.JukeBox
 import j4k.candycrush.audio.SoundMachine
-import j4k.candycrush.config.donuts
+import j4k.candycrush.config.fruits
 import j4k.candycrush.config.testTiles
 import j4k.candycrush.input.MoveTileObserver
 import j4k.candycrush.level.LevelFactory
@@ -51,7 +51,7 @@ suspend fun main() = Korge(
     Logger.defaultLevel = Logger.Level.DEBUG
 
     val log = Logger("main")
-    val candies = donuts()
+    val candies = fruits()
     val bus = EventBus(this)
 
     val res = Ressources().load()
