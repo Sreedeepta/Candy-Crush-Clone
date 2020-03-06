@@ -45,6 +45,7 @@ val backgroundColor = Colors["#2b2b2b"]
 
 val level = LevelFactory().createLevel(1)
 
+
 suspend fun main() = Korge(
         virtualHeight = virtualResolution.height, virtualWidth = virtualResolution.width,
         width = windowResolution.width, height = windowResolution.height, bgcolor = backgroundColor, debug = debug) {
