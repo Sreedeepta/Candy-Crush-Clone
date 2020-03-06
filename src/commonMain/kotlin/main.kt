@@ -15,7 +15,6 @@ import j4k.candycrush.lib.EventBus
 import j4k.candycrush.lib.Resolution
 import j4k.candycrush.lib.Ressources
 import j4k.candycrush.renderer.GameFieldRenderer
-import j4k.candycrush.renderer.LevelCheckRenderer
 import j4k.candycrush.renderer.ScoringRenderer
 import j4k.candycrush.renderer.animation.TileAnimator
 
@@ -70,8 +69,6 @@ suspend fun main() = Korge(
     val fieldRenderer = GameFieldRenderer(level.field, virtualResolution, candies, testTiles())
     addChild(fieldRenderer)
 
-    val levelCheck = LevelCheck(level, bus)
-    val checkRenderer = LevelCheckRenderer(this, bus, levelCheck, candies, res).apply { load() }
     Scoring(bus)
 
     val scoringRenderer = ScoringRenderer(this, bus, virtualResolution, fieldRenderer.positionGrid, res)
@@ -88,9 +85,7 @@ suspend fun main() = Korge(
         animator.reset()
         scoringRenderer.reset()
         gameFlow.reset()
-        levelCheck.reset()
         gameFlow.checkNewField()
-        checkRenderer.update()
     }
 
     fun shuffe() {
