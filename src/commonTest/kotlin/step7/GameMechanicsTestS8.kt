@@ -1,4 +1,4 @@
-package step8
+package step7
 
 import j4k.candycrush.GameMechanics
 import j4k.candycrush.GameMechanics.InsertMove
