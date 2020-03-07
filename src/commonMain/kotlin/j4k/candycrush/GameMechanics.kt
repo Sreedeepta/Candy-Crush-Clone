@@ -197,7 +197,8 @@ class GameMechanics(val field: GameField) {
     }
 
     fun listEmptyCells(): List<Position> {
-        return field.listAllCells().filter { it.tile.isHole() }.map { it.position }
+        // TODO
+        return emptyList()
     }
 
     /**
