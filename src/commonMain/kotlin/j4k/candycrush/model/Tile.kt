@@ -27,7 +27,10 @@ enum class Tile {
 
     fun isHole() = this == Hole
 
-    fun isTile() = !isWall() && !isHole() && !isOutOfSpace()
+    fun isTile(): Boolean {
+        TODO()
+        return false
+    }
 
     fun isNotTile() = !isTile()
 
