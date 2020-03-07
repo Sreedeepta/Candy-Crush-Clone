@@ -17,10 +17,7 @@ class GameMechanics(val field: GameField) {
     }
 
     fun swapTiles(a: Position, b: Position) {
-        val tileA = field[a]
-        val tileB = field[b]
-        field[a] = tileB
-        field[b] = tileA
+       // TODO
     }
 
     fun isSwapAllowed(a: Position, b: Position): Boolean {
