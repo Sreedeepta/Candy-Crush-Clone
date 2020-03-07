@@ -108,41 +108,13 @@ class GameMechanics(val field: GameField) {
     }
 
     fun getHorizontalSurroundings(cell: TileCell): List<TileCell> {
-        if (cell.tile.isNotTile()) {
-            return listOf(cell)
-        }
-        var pos = cell.position.right()
-        val cellsRight = mutableListOf<TileCell>()
-        while (field.getTile(pos) == cell.tile) {
-            cellsRight += field.getTileCell(pos)
-            pos = pos.right()
-        }
-        pos = cell.position.left()
-        val cellsLeft = mutableListOf<TileCell>()
-        while (field.getTile(pos) == cell.tile) {
-            cellsLeft += field.getTileCell(pos)
-            pos = pos.left()
-        }
-        return cellsLeft.reversed() + cell + cellsRight
+        // TODO
+        return emptyList()
     }
 
     fun getVerticalSurroundings(cell: TileCell): List<TileCell> {
-        if (cell.tile.isNotTile()) {
-            return listOf(cell)
-        }
-        var pos = cell.position.bottom()
-        val cellsBottom = mutableListOf<TileCell>()
-        while (field.getTile(pos) == cell.tile) {
-            cellsBottom += field.getTileCell(pos)
-            pos = pos.bottom()
-        }
-        pos = cell.position.top()
-        val cellsTop = mutableListOf<TileCell>()
-        while (field.getTile(pos) == cell.tile) {
-            cellsTop += field.getTileCell(pos)
-            pos = pos.top()
-        }
-        return cellsTop.reversed() + cell + cellsBottom
+        // TODO
+        return emptyList()
     }
 
     fun isVerticalConnected(pos: Position): Boolean {
