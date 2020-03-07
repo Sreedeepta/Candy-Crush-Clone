@@ -62,10 +62,8 @@ data class GameField(val columnsSize: Int, val rowSize: Int) : Iterable<Row> {
     operator fun get(column: Int, row: Int) = getTile(column, row)
 
     fun getColumn(column: Int): List<Tile> {
-        if (column >= columnsSize) {
-            throw IllegalArgumentException("Column $column is out of range: $columnsSize")
-        }
-        return (0 until rowSize).map { row -> get(column, row) }
+        // TODO
+        return emptyList()
     }
 
     fun getColumnCell(column: Int): List<TileCell> {
