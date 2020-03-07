@@ -58,7 +58,7 @@ class GameMechanics(val field: GameField) {
     }
 
     fun removeTile(position: Position) {
-        field[position] = Tile.Hole
+        // TODO
     }
 
     fun removeTiles(positions: List<Position>) {
