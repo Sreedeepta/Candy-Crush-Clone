@@ -41,10 +41,10 @@ enum class Tile {
 
     companion object {
 
-        private val toTile = mutableMapOf<String, Tile>()
+        private val shortNames = mutableMapOf<String, Tile>()
 
         init {
-            values().forEach { toTile[it.shortName()] = it }
+
         }
 
         fun getTile(index: Int): Tile {
@@ -59,7 +59,7 @@ enum class Tile {
         }
 
         fun getTile(shortName: String): Tile {
-            return toTile[shortName] ?: throw IllegalArgumentException("Failed finding tile for'$shortName'")
+            TODO()
         }
 
         fun randomTile() = values().filter { it.isTile() }.random()
