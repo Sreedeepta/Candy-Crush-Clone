@@ -14,6 +14,7 @@ enum class Tile {
      * An empty field.
      */
     Hole,
+
     /**
      * The Tile is not present. Happens if Tile coordinates are out of the [GameField].
      */
@@ -21,7 +22,9 @@ enum class Tile {
 
     val index = ordinal
 
-    fun shortName(): String = name.first().toString()
+    fun shortName(): String {
+        TODO()
+    }
 
     fun isWall() = this == Wall
 
