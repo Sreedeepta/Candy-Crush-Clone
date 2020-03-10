@@ -23,7 +23,8 @@ enum class Tile {
     val index = ordinal
 
     fun shortName(): String {
-        TODO()
+        // TODO
+        return ""
     }
 
     fun isWall() = this == Wall
@@ -31,7 +32,7 @@ enum class Tile {
     fun isHole() = this == Hole
 
     fun isTile(): Boolean {
-        TODO()
+        // TODO
         return false
     }
 
@@ -59,7 +60,8 @@ enum class Tile {
         }
 
         fun getTile(shortName: String): Tile {
-            TODO()
+            // TODO
+            return A
         }
 
         fun randomTile() = values().filter { it.isTile() }.random()
