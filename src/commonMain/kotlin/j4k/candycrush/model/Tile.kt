@@ -22,6 +22,9 @@ enum class Tile {
 
     val index = ordinal
 
+    /**
+     * @return One upper case letter representation of this tile.
+     */
     fun shortName(): String {
         // TODO
         return ""
@@ -31,6 +34,9 @@ enum class Tile {
 
     fun isHole() = this == Hole
 
+    /**
+     * Returns `true` if this is a tile, which can be moved by the player.
+     */
     fun isTile(): Boolean {
         // TODO
         return false
@@ -59,6 +65,9 @@ enum class Tile {
             return tile
         }
 
+        /**
+         * @return The [Tile] which is mapped to the given one character.
+         */
         fun getTile(shortName: String): Tile {
             // TODO
             return A
