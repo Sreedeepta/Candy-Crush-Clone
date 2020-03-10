@@ -28,6 +28,7 @@ import j4k.candycrush.renderer.animation.TileAnimator
 
 const val debug = false
 const val playBackgroundMusic = false
+const val playSounds = false
 
 /**
  * Virtual size which gets projected onto the [windowResolution]
@@ -64,7 +65,7 @@ suspend fun main() = Korge(
         play()
     }
 
-    val soundMachine = SoundMachine(this).apply { load() }
+    val soundMachine = SoundMachine(this).playSounds(playSounds).load()
 
     val fieldRenderer = GameFieldRenderer(level.field, virtualResolution, candies, testTiles())
     addChild(fieldRenderer)

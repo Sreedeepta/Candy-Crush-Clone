@@ -4,21 +4,22 @@ import com.soywiz.korau.sound.NativeSound
 import com.soywiz.korau.sound.readNativeSound
 import com.soywiz.korge.view.Stage
 import com.soywiz.korio.file.std.resourcesVfs
-import j4k.candycrush.lib.Loadable
 
 /**
  * Plays game sounds.
  */
-class SoundMachine(override val stage: Stage) : Loadable {
+class SoundMachine(val stage: Stage) {
 
     /**
      * Removing tiles from the field
      */
     private var clear: NativeSound? = null
+
     /**
      * Wrong tile move, which will be toggled back
      */
     private var wrongMove: NativeSound? = null
+
     /**
      * Tile git's the ground. Used for now.
      */
@@ -33,11 +34,11 @@ class SoundMachine(override val stage: Stage) : Loadable {
     private var multi5: NativeSound? = null
     private var multi6: NativeSound? = null
 
-    val playSounds = true
+    var playSounds = true
 
     private suspend fun newSound(fileName: String) = resourcesVfs["sounds/$fileName"].readNativeSound()
 
-    override suspend fun load() {
+    suspend fun load(): SoundMachine {
         if (playSounds) {
             clear = newSound("clear.mp3")
             multi2 = newSound("multi_2.mp3")
@@ -48,6 +49,17 @@ class SoundMachine(override val stage: Stage) : Loadable {
             wrongMove = newSound("wrong_move.mp3")
             dopGround = newSound("drop_ground.mp3")
         }
+        return this
+    }
+
+    fun playSounds(playSounds: Boolean): SoundMachine {
+        this.playSounds = playSounds
+        return this
+    }
+
+    fun muteSounds(): SoundMachine {
+        playSounds = false
+        return this
     }
 
     fun playClear() {
