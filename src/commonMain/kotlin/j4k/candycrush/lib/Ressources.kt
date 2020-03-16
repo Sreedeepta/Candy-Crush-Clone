@@ -1,5 +1,7 @@
 package j4k.candycrush.lib
 
+import com.soywiz.korau.sound.NativeSound
+import com.soywiz.korau.sound.readMusic
 import com.soywiz.korim.bitmap.Bitmap
 import com.soywiz.korim.bitmap.NinePatchBitmap32
 import com.soywiz.korim.bitmap.readNinePatch
@@ -15,6 +17,8 @@ suspend fun loadImage(fileName: String): Bitmap = resourcesVfs["images/$fileName
 suspend fun loadFont(fileName: String): BitmapFont = resourcesVfs["fonts/$fileName"].readBitmapFont()
 
 suspend fun loadNinePatch(fileName: String): NinePatchBitmap32 = resourcesVfs["images/$fileName"].readNinePatch()
+
+suspend fun loadMusic(fileName: String): NativeSound = resourcesVfs["music/$fileName"].readMusic()
 
 class Ressources : AsyncDependency {
 

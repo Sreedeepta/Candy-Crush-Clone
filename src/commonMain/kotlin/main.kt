@@ -28,7 +28,7 @@ import j4k.candycrush.renderer.animation.TileAnimator
  */
 
 const val debug = false
-const val playBackgroundMusic = false
+const val playBackgroundMusic = true
 
 /**
  * Virtual size which gets projected onto the [windowResolution]
